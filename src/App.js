@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Appbar from './Appbar'
+import List from './shoppinglist'
+import {Provider} from 'react-redux'
+import store from './store'
+import Model from './itemModel'
+import { loadUser } from './actions/authAction'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class  App extends Component {
+  componentDidMount(){
+    store.dispatch(loadUser())
+  }
+  render(){
+    return (
+      <Provider store={store}>
+            <div className="App">
+              <Appbar/>
+              <Model/>
+               <List/> 
+             </div>
+      </Provider>
+      );
+  }
 }
 
 export default App;

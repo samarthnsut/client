@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+.delete-btn{
+  margin: 5px;
+  text-align: left;
+}
+.add-btn{
+  margin: 10px;
+}
+.list-item{
+  text-align: left;
+}
+
+.fade-enter{
+  opacity: 0.001;
+}
+.fade-enter-active{
+ opacity: 1;
+ transition: opacity 1000ms ease-in;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: 0.001;
+  transition: opacity 1000ms ease-in;
+}
